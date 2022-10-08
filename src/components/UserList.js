@@ -7,13 +7,13 @@ export const UserList = () => {
 
   useEffect(() => {
     getUsers();
-  });
+  },[]);
 
   const getUsers = async () => {
     //metode fetch data
     const response = await axios.get("http://localhost:5000/users/");
-    console.log(response.data)
-    // setUser(response.data);
+    // console.log(response.data)
+    setUser(response.data);
   };
 
   const deleteUser = async(id)=>{
