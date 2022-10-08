@@ -11,11 +11,20 @@ export const UserList = () => {
 
   const getUsers = async () => {
     //metode fetch data
-    const response = await axios.get("http://localhost:5000/users");
-    // console.log(response.data)
-    setUser(response.data);
+    const response = await axios.get("http://localhost:5000/users/");
+    console.log(response.data)
+    // setUser(response.data);
   };
 
+  const deleteUser = async(id)=>{
+    try {
+        await axios.delete(`http://localhost:5000/users/${id}`)
+        getUsers()
+    } catch (error) {
+        console.log(error)
+    }
+  }
+ 
   return (
     <div className="columns mt-5 is-centered">
       <div className="column is-half">
@@ -47,7 +56,7 @@ export const UserList = () => {
                     Edit
                   </Link>
                   <Link
-                    to={`delete/${user.id}`}
+                    onClick={()=> deleteUser(user.id)}
                     className="button is-small is-danger"
                   >
                     Delete
