@@ -1,8 +1,16 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import UserList from "./components/UserList"
+import AddUser from "./components/AddUser"
+
 function App() {
   return (
-    <div>
-     <h1>HY BRO</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={ <UserList/>}/>
+      <Route path="add" element={ <AddUser/>}/>
+    </Routes>
+   
+    </BrowserRouter>
   );
 }
 
