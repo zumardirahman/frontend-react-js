@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Author : Zumardi Rahman, S.Kom, M.kom
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
