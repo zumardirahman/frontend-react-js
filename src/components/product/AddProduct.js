@@ -25,11 +25,7 @@ const AddProduct = () => {
     formData.append("file", file);
     formData.append("title", title);
 
-    const config = {
-        headers: {
-            'Content-type': 'multipart/form-data'
-        }
-    }
+    const config = {}
 
     // console.log(formData.get('file'));
     // console.log(formData.get('title'));
