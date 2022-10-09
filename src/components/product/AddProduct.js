@@ -35,7 +35,7 @@ const AddProduct = () => {
     // console.log(formData.get('title'));
     // console.log(formData.get('file'));
     try {
-      axios.post(
+      await axios.post(
         url,
         formData,
         config
