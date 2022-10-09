@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; //untuk fetch data
+import  { React, useState, useEffect } from "react"; //untuk fetch data
 import axios from "axios"; //untuk intraksi dengan API
 import { Link } from "react-router-dom"; //meggunakan link
 
