@@ -4,6 +4,11 @@ Author : Zumardi Rahman, S.Kom, M.kom
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## My Command Memories
+###Installing react
+        npx create-react-app myreactapp
+                
+
 ## My Depedencies
         npm i react-router-dom
         npm i axios
