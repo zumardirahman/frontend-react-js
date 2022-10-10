@@ -48,7 +48,7 @@ export const ProductList = () => {
 
          <footer className="card-footer">
          <Link to={`edit/${product.id}`} className="card-footer-item" > Edit </Link>
-         <Link onClick={()=> deleteProduct(product.id)} className="card-footer-item" > Delete </Link>
+         <Link onClick={()=> deleteProduct(product.id)} className="card-footer-item" > Delete {product.id}</Link>
          
          </footer>
        </div>
