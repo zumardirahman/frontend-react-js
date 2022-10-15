@@ -1,7 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//Home Component
-import Home from "./components/home";
+//Guest Component
+import Login from "./components/guest/Login";
+import Register from "./components/guest/Register";
+
+
+//Dashoboard Component
+import Dashboard from "./components/dashboard/Dashboard";
 
 //User Component
 import UserList from "./components/user/UserList";
@@ -17,7 +22,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Login />} />
+
+        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/dashboard" element={<Dashboard />}/>
+        
         <Route path="/users" element={<UserList />} />
         <Route path="users/add" element={<AddUser />} />
         <Route path="users/edit/:id" element={<EditUser />} />
