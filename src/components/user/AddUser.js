@@ -17,7 +17,7 @@ const AddUser = () => {
         email,
         gender,
       });
-      navigate("/")
+      navigate("/users")
     } catch (error) {
         console.log(error)
     }
