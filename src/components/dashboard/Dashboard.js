@@ -36,8 +36,37 @@ const Dashboard = () => {
     }
   };
 
+
+  //cara menggunakan interceptor ini
+  const axiosJWT = axios.create()
+
+  //setiap req yang butuh token maka dapat gunakan axiosJWT ini
+  axiosJWT.interceptors.request.use(async(config)=>{
+    const currentDate = new Date()
+    //bandingkan currebnt date dengan expre token
+    if(expire * 1000 < currentDate.getTime()){ //1000 karna milisecond
+        const response = await axios.get("http://localhost:5000/token"); //panggil refresh token
+        //update header
+        config.headers.Authorization = `Bearer ${response.data.accessToken}`
+        //set token ke dalam state
+        setToken(response.data.accessToken)
+
+        const decoded = jwt_decode(response.data.accessToken);
+        // console.log(decoded)
+        setName(decoded.name);
+        setExpire(decoded.exp);
+
+    }
+    return config;
+
+  },(error)=>{
+    //jika error reject rpromisenya
+    return Promise.reject(error)
+  })
+
+  //contoh pengguna axiosJWT adalah saat ambil data user
   const getUsers = async () => {
-      const response = await axios.get("http://localhost:5000/users",{
+      const response = await axiosJWT.get("http://localhost:5000/users",{
         headers:{
             Authorization: `Bearer ${token}`
         }
