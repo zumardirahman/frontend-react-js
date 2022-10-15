@@ -24,7 +24,8 @@ useEffect(()=>{
             const response = await axios.get('http://localhost:5000/token')
             setToken(response.data.accessToken)
             const decoded = jwt_decode(response.data.accessToken)
-            console.log(decoded)
+            // console.log(decoded)
+            setName(decoded.name)
         }catch(error){
 
         }
@@ -33,7 +34,7 @@ useEffect(()=>{
   return (
     <>
     <Navbar/>
-    <div className='container mt-5'><h1 className="title">Welcome back, </h1>
+    <div className='container mt-5'><h1 className="title">Welcome back, {name}</h1>
     <b>MENU</b>
     <div className="container">
       <div className="buttons is-centered">
