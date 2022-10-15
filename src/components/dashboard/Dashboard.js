@@ -6,7 +6,8 @@ import jwt_decode from "jwt-decode";
 
 import { Link } from "react-router-dom"; //meggunakan link
 //Template Component
-import Navbar from "../template";
+import Navbar from "../template/Navbar";
+import Footer from "../template/Footer";
 
 const Dashboard = () => {
   const [name, setName] = useState("");
@@ -77,17 +78,17 @@ const Dashboard = () => {
 
 
   return (
-    <>
+    <div>
       <Navbar />
       <div className="container mt-5">
         <h1 className="title">Welcome back, {name}</h1>
         <b>MENU</b>
         <div className="container">
           <div className="buttons is-centered">
-            <Link to={`users`} className="button is-link">
+            <Link to={`../users`} className="button is-link">
               Data User
             </Link>
-            <Link to={`products`} className="button is-success">
+            <Link to={`../products`} className="button is-success">
               Data Product
             </Link>
 
@@ -97,7 +98,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

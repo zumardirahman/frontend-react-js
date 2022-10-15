@@ -23,7 +23,7 @@ const EditUser = () => {
         email,
         gender,
       });
-      navigate("/")
+      navigate("/users")
     } catch (error) {
         console.log(error)
     }
