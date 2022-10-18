@@ -29,7 +29,7 @@ export const ProductList = () => {
     <div className="container mt-5">
       <div className="columns is-multiline">
       {products.map((product) => (
-        <div className="column is-one-quarter" key={product.id}>
+        <div className="column is-one-quarter" key={product.uuid}>
        <div className="card">
          <div className="card-image">
            <figure className="image is-4by3">

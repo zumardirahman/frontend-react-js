@@ -98,7 +98,7 @@ const [expire, setExpire] = useState("");
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <tr key={user.id}>
+                <tr key={user.uuid}>
                   <td>{index + 1}</td>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
